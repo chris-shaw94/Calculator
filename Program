@@ -63,9 +63,9 @@ namespace Calculator
                         }
                     }
                 }
-                catch (Exception ex)
+                catch (Exception)
                 {
-                    Console.WriteLine(ex);
+                    Console.WriteLine("error");
                 }
         }
     }
