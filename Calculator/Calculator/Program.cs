@@ -12,6 +12,7 @@ namespace Calculator
         {
             Calculator Calc = new Calculator();
             while (true)
+            {
                 try
                 {
                     {
@@ -24,43 +25,33 @@ namespace Calculator
                         }
                         if (upperchoice == "A")
                         {
-                            Console.WriteLine("Enter first value");
-                            double x = double.Parse(Console.ReadLine());
-                            Console.WriteLine("Enter second value");
-                            double y = double.Parse(Console.ReadLine());
+                            double x = GetValue("Enter first value");
+                            double y = GetValue("Enter second value");
                             Console.WriteLine(Calc.add(x, y));
                         }
                         else if (upperchoice == "S")
                         {
-                            Console.WriteLine("Enter first value");
-                            double x = double.Parse(Console.ReadLine());
-                            Console.WriteLine("Enter second value");
-                            double y = double.Parse(Console.ReadLine());
+                            double x = GetValue("Enter first value");
+                            double y = GetValue("Enter second value");
                             Console.WriteLine(Calc.sub(x, y));
                         }
                         else if (upperchoice == "D")
                         {
-                            Console.WriteLine("Enter first value");
-                            double x = double.Parse(Console.ReadLine());
-                            Console.WriteLine("Enter second value");
-                            double y = double.Parse(Console.ReadLine());
+                            double x = GetValue("Enter first value");
+                            double y = GetValue("Enter second value");
                             Console.WriteLine(Calc.div(x, y));
                         }
                         else if (upperchoice == "M")
                         {
-                            Console.WriteLine("Enter first value");
-                            double x = double.Parse(Console.ReadLine());
-                            Console.WriteLine("Enter second value");
-                            double y = double.Parse(Console.ReadLine());
+                            double x = GetValue("Enter first value");
+                            double y = GetValue("Enter second value");
                             Console.WriteLine(Calc.mul(x, y));
                         }
 
                         else if (upperchoice == "%")
                         {
-                            Console.WriteLine("Enter percentage wanted");
-                            double x = double.Parse(Console.ReadLine());
-                            Console.WriteLine("Out of...");
-                            double y = double.Parse(Console.ReadLine());
+                            double x = GetValue("Enter percentage wanted");
+                            double y = GetValue("Out of...");
                             Console.WriteLine(Calc.perc(x, y));
                         }
                     }
@@ -69,6 +60,14 @@ namespace Calculator
                 {
                     Console.WriteLine(ex.Message);
                 }
+            }
+
+        }
+
+        public static double GetValue(string message)
+        {
+            Console.WriteLine(message);
+            return double.Parse(Console.ReadLine());
         }
     }
 }
