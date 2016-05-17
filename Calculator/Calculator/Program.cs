@@ -15,7 +15,7 @@ namespace Calculator
                 try
                 {
                     {
-                        Console.WriteLine("Choose a function: Add- A, Subtract- S, Divide- D, Multiply- M, Quit- Q");
+                        Console.WriteLine("Choose a function: Add- A, Subtract- S, Divide- D, Multiply- M, Percentage- %, Quit- Q");
                         string choice = Console.ReadLine();
                         string upperchoice = choice.ToUpper();
                         if (upperchoice == "Q")
@@ -53,6 +53,15 @@ namespace Calculator
                             Console.WriteLine("Enter second value");
                             double y = double.Parse(Console.ReadLine());
                             Console.WriteLine(Calc.mul(x, y));
+                        }
+
+                        else if (upperchoice == "%")
+                        {
+                            Console.WriteLine("Enter percentage wanted");
+                            double x = double.Parse(Console.ReadLine());
+                            Console.WriteLine("Out of...");
+                            double y = double.Parse(Console.ReadLine());
+                            Console.WriteLine(Calc.perc(x, y));
                         }
                     }
                 }

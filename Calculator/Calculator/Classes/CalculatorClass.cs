@@ -28,7 +28,14 @@ namespace Calculator
         }
         public double mul(double A, double B)
         {
-            return  A * B;
+            return A * B;
+        }
+
+
+        public double perc(double A, double B)
+        {
+            double result = div(A, 100);
+            return mul(result,B);
         }
     }
 }
