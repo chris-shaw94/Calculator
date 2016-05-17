@@ -18,7 +18,13 @@ namespace Calculator
         }
         public double div(double A, double B)
         {
-            return  A/B;
+            if (B > 0) {
+                return A / B;
+            }
+            else
+            {
+                throw new Exception("Divide by zero error");
+            }
         }
         public double mul(double A, double B)
         {

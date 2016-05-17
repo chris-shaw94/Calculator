@@ -44,14 +44,7 @@ namespace Calculator
                             double x = double.Parse(Console.ReadLine());
                             Console.WriteLine("Enter second value");
                             double y = double.Parse(Console.ReadLine());
-                            if (y == 0)
-                            {
-                                Console.WriteLine("Divide by Zero Error");
-                            }
-                            else
-                            {
-                                Console.WriteLine(Calc.div(x, y));
-                            }
+                            Console.WriteLine(Calc.div(x, y));
                         }
                         else if (upperchoice == "M")
                         {
@@ -63,9 +56,9 @@ namespace Calculator
                         }
                     }
                 }
-                catch (Exception)
+                catch (Exception ex)
                 {
-                    Console.WriteLine("error");
+                    Console.WriteLine(ex.Message);
                 }
         }
     }
