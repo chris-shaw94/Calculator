@@ -19,42 +19,44 @@ namespace Calculator
                         Console.WriteLine("Choose a function: Add- A, Subtract- S, Divide- D, Multiply- M, Percentage- %, Quit- Q");
                         string choice = Console.ReadLine();
                         string upperchoice = choice.ToUpper();
+
+                        double x = 0;
+                        double y = 0;
+
                         if (upperchoice == "Q")
                         {
                             break;
                         }
-                        if (upperchoice == "A")
-                        {
-                            double x = GetValue("Enter first value");
-                            double y = GetValue("Enter second value");
-                            Console.WriteLine(Calc.add(x, y));
-                        }
-                        else if (upperchoice == "S")
-                        {
-                            double x = GetValue("Enter first value");
-                            double y = GetValue("Enter second value");
-                            Console.WriteLine(Calc.sub(x, y));
-                        }
-                        else if (upperchoice == "D")
-                        {
-                            double x = GetValue("Enter first value");
-                            double y = GetValue("Enter second value");
-                            Console.WriteLine(Calc.div(x, y));
-                        }
-                        else if (upperchoice == "M")
-                        {
-                            double x = GetValue("Enter first value");
-                            double y = GetValue("Enter second value");
-                            Console.WriteLine(Calc.mul(x, y));
-                        }
 
-                        else if (upperchoice == "%")
+                        switch (upperchoice)
                         {
-                            double x = GetValue("Enter percentage wanted");
-                            double y = GetValue("Out of...");
-                            Console.WriteLine(Calc.perc(x, y));
+                           case "A":
+                                x = GetValue("Enter first value");
+                                y = GetValue("Enter second value");
+                                Console.WriteLine(Calc.add(x, y));
+                                break;
+                            case "S":
+                                x = GetValue("Enter first value");
+                                y = GetValue("Enter second value");
+                                Console.WriteLine(Calc.sub(x, y));
+                                break;
+                            case "D":
+                                x = GetValue("Enter first value");
+                                y = GetValue("Enter second value");
+                                Console.WriteLine(Calc.div(x, y));
+                                break;
+                            case "M":
+                                x = GetValue("Enter first value");
+                                y = GetValue("Enter second value");
+                                Console.WriteLine(Calc.mul(x, y));
+                                break;
+                            case "%":
+                                x = GetValue("Enter percentage wanted");
+                                y = GetValue("Out of...");
+                                Console.WriteLine(Calc.perc(x, y));
+                                break;
                         }
-                    }
+                                           }
                 }
                 catch (Exception ex)
                 {
